@@ -1,5 +1,5 @@
 ﻿# LiveQRCode_intro
-I put this for study purpose. /n
+I put this for study purpose. \n
 Never write a code before...
 
 Only a few month of learning python.
