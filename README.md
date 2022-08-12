@@ -7,7 +7,7 @@ Please let me know.
 
 Thank you!
 
-# The project is simple.
+# The project is simple
 
 1. Start up your webcam with openCV.
 2. Use pyzbar and openCV to decode the QRcode.
@@ -16,3 +16,9 @@ Thank you!
 5. Store the data into csv.
 6. Use google API to upload the reformated data.
 
+# What is in mind
+
+1. Use AI to read the QRCode
+2. Decode issue. The data is not 'utf-8' can be 'shift-jis' 'big5'
+3. Methods of decode.
+4. Get better understanding of QRCode with bytes.
