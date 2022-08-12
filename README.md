@@ -1,16 +1,14 @@
 ﻿# LiveQRCode_intro
-I put this for study purpose.</b>
-Never write a code before...
-
-Only a few month of learning python.
-
-If you find a better way of improving.
-
+I put this for study purpose.  
+Never write a code before...  
+Only a few month of learning python.  
+If you find a better way of improving.  
 Please let me know.
 
 Thank you!
 
-The project is simple.
+# The project is simple.
+
 1. Start up your webcam with openCV.
 2. Use pyzbar and openCV to decode the QRcode.
 3. Frame the QRcode with text.
