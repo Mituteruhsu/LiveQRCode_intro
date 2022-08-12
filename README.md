@@ -1,8 +1,14 @@
 ﻿# LiveQRCode_intro
 I put this for study purpose. 
+
 Never write a code before...
+
 Only a few month of learning python.
-If you find a better way of improving. Please let me know.
+
+If you find a better way of improving.
+
+Please let me know.
+
 Thank you!
 
 The project is simple.
