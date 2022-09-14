@@ -1,4 +1,4 @@
-﻿# LiveQRCode_intro
+# LiveQRCode_intro
 I put this for study purpose.  
 There are planty of benefit in studying QRCode as a biginner of Python.  
 If you find a better way of improving.  
