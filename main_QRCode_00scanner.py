@@ -29,13 +29,13 @@ def real_time_qrcode_detection():
         # 僅顯示data內容並用utf-8解碼字體
         strcheck = barcode.data.decode('utf-8')
         print(barcode.data)
+        print(strcheck)
     cv2.imshow('decoder window', frame)
     return strcheck
 
 def QRCodedata():
     while True:
         codedata = real_time_qrcode_detection()
-        # if codedata != "" and var.QRCodeStr != codedata:
         var.QRCodeStr = codedata
             
         key = cv2.waitKey(1)
@@ -47,4 +47,4 @@ def QRCodedata():
     cv2.destroyAllWindows()
 
 # if __name__ == '__main__':          # for run test
-    # QRCodedata
+#     QRCodedata()
