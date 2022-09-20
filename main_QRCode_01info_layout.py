@@ -28,7 +28,7 @@ class QRCodeInfo:
     item_quantity: str                  # 14.數量：商品數量，以十進位方式記載。
     items_price: str                    # 15.單價：商品單價，以十進位方式記載。
     
-def recode(x):
+def recode(x):      # 判別 0 , 1 , 2 是否為 Big5, UTF-8, Base64
     print("-----From barcode.data.decode('utf-8')----- \n", x)
     y= list(filter(None, re.search("[0-9]{1}:[0-9]{1}:[0-9]{1}:", x, flags=0).group(0).split(':'))) # 正則表達找出與關鍵類似的字元
     y= int(y[2])
