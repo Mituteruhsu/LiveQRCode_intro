@@ -15,11 +15,12 @@ class QRCodeInfo:
 # ==============================================================================================================================================================================================
 # 以上欄位總計77碼。下述資訊為接續以上資訊繼續延伸記錄，且每個欄位前皆以間隔符號“:” (冒號)區隔各記載事項，若左方二維條碼不敷記載，則繼續記載於右方二維條碼。    
 # ==============================================================================================================================================================================================
+    after77: str                        # 這裡是總欄位後的檔案
     recieve_free_usage: str             # 9. 營業人自行使用區 (10碼)：提供營業人自行放置所需資訊，若不使用則以10個“*”符號呈現。
     recieve_Item: str                   # 10.二維條碼記載完整品目筆數：記錄左右兩個二維條碼記載消費品目筆數，以十進位方式記載。
     recieve_totle_Item: str             # 11.該張發票交易品目總筆數：記錄該張發票記載消費品目總筆數，以十進位方式記載。
 # ==============================================================================================================================================================================================
-                                        # 12.中文編碼參數 (1碼)：定義後續資訊的編碼規格，若以：
+    codetype: str                       # 12.中文編碼參數 (1碼)：定義後續資訊的編碼規格，若以：
                                         # (1) Big5編碼，則此值為0
                                         # (2) UTF-8編碼，則此值為1
                                         # (3) Base64編碼，則此值為2
@@ -63,9 +64,13 @@ def reInfo(x):
         recieve_buyer_invoice_num = "一般消費者"
     recieve_seller_invoice_num = x[45:53]
     recieve_AESencode = x[53:77]
-    recieve_free_usage = x[77:87]
-    recieve_Item = x[87:]
-    recieve_totle_Item = x[87:]
+    after77 = x[77:]
+    y = after77.split(':')
+    z = [i for i in y if i != ""]
+    recieve_free_usage = z[0]
+    recieve_Item = z[1]
+    recieve_totle_Item = z[2]
+    codetype = z[3]
     # print("發票字軌(10位)    : " + self.recieve)
     # print("發票開立日期 (7位): " + self.recieve_date)
     # print("隨機碼 (4位)      : " + self.recieve_randam)
@@ -95,9 +100,11 @@ def reInfo(x):
         recieve_buyer_invoice_num,
         recieve_seller_invoice_num,
         recieve_AESencode,
+        after77,
         recieve_free_usage,
         recieve_Item,
         recieve_totle_Item,
+        codetype,
         items,
         item_quantity,
         items_price

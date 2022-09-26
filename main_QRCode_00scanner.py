@@ -28,8 +28,8 @@ def real_time_qrcode_detection():
         # print(barcode)    # 可以看到所有QRCode的內容
         # 僅顯示data內容並用utf-8解碼字體
         strcheck = barcode.data.decode('utf-8')
-        print(barcode.data)
-        print(strcheck)
+        # print(barcode.data)
+        # print(strcheck)
     cv2.imshow('decoder window', frame)
     return strcheck
 
