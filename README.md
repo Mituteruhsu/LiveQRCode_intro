@@ -16,6 +16,10 @@ Thank you!
 5. Store the data into csv.
 6. Use google API to upload the reformated data.
 
+# Proto Program
+
+In this folder your will find lots of the test program. It helps me to reorgnize my idea and process.
+
 # Problem
 
 1. When you scan the QRCode with TestScan/QRCode_test_00.py, the "print(f'pymessage:{pybarcode}')" will get garbled.  
