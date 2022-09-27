@@ -9,9 +9,9 @@ Thank you!
 
 # Prograss
 
-2022/09/24 main_Run.py : Run this program allows you to scan the QRCode and print out the data in terminal.
-2022/09/26 main_Run.py : update the function to create csv file.
-2022/09/27 main_Run_Google_API_Upload.py : Allows you to upload csv data to google sheet.
+2022/09/24 main_Run.py : Run this program allows you to scan the QRCode and print out the data in terminal.   
+2022/09/26 main_Run.py : update the function to create csv file.   
+2022/09/27 main_Run_Google_API_Upload.py : Allows you to upload csv data to google sheet.   
 
 # The project is simple
 
