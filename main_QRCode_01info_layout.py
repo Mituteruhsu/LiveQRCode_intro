@@ -33,7 +33,7 @@ def recode(x):      # 判別 0 , 1 , 2 是否為 Big5, UTF-8, Base64
     print("-----From barcode.data.decode('utf-8')----- \n", x)
     y= list(filter(None, re.search("[0-9]{1}:[0-9]{1}:[0-9]{1}:", x, flags=0).group(0).split(':'))) # 正則表達找出與關鍵類似的字元
     y= int(y[2])
-    if y != 1 and y == 0:
+    if y == 0:
         try:
             print('-----big5 decoded!!-----')
             x=x.encode('shift-jis').decode('big5')
@@ -43,11 +43,11 @@ def recode(x):      # 判別 0 , 1 , 2 是否為 Big5, UTF-8, Base64
             print('not decodeable')
         finally:
             return x
-    elif y != 1 and y == 2:
-        print('undefinde decode: base64') 
     elif y == 1:
         print('-----utf-8 decoded!!-----')
         return x
+    elif y == 2:
+        print('undefinde decode: base64') 
 
 def reInfo(x):
     import re
