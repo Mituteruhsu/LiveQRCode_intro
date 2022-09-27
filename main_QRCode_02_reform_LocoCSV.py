@@ -9,8 +9,8 @@ file_name='Invoice_Compay.csv'
 
 
 # -----------1. Creat Dictionary File(建檔完不再使用)-----------
-# header_key=input("Enter header, use',' to split:").split(',')
-# value=input("Enter dict_arrayuse, ',' to split:").split(',')
+# header_key=input("Enter header use',' to split:").split(',')
+# value=input("Enter dict_array use ',' to split:").split(',')
 # dict_arr = dict(zip(header_key, value))
 # print(header_key)
 # print(type(header_key))
@@ -91,7 +91,7 @@ def Dict_get_value_check(Iv_num):
 # deletinput=input('請輸入欲刪除的Invoice_num: ')
 # csv_delet(deletinput)
 # ---------read_file-------------
-# csv_reader()
+csv_reader()
 # ------Value_check_test---------
 # Dict_get_value_check('18070629')
 

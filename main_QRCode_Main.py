@@ -1,5 +1,7 @@
 import time
+import csv
 import threading
+import pandas as pd
 import main_Global_Var as var
 import main_QRCode_00scanner as QRCodeScan
 import main_QRCode_01info_layout as myQRCodeInfo
@@ -48,5 +50,27 @@ if __name__ == '__main__':
             print(f'Item Name: {info.items}')
             print(f'Item Quantity: {info.item_quantity}')
             print(f'Item Price: {info.items_price}')
+
+            with open('Invoice_Raw_data.csv', 'a', newline='', encoding='utf-8') as file:
+                csv.DictWriter(file, [
+                    'Date',
+                    'Recieve_Num',
+                    'Total_Sale_$',
+                    'Buyer_Invoice_Num',
+                    'Seller_Invoice_Num',
+                    'Encode Type',
+                    'Item Name']).writerow({
+                        'Date':info.recieve_date,
+                        'Recieve_Num':info.recieve,
+                        'Total_Sale_$':info.recieve_total_sale,
+                        'Buyer_Invoice_Num':info.recieve_buyer_invoice_num,
+                        'Seller_Invoice_Num':'SI'+info.recieve_seller_invoice_num,
+                        'Encode Type':info.codetype,
+                        'Item Name':info.items})
+                file.close()
             
-                        
+            with open('Invoice_Raw_data.csv', 'r', encoding='utf-8') as file:
+                reader_dic = pd.read_csv(file)
+                print('-----pd data-----')
+                print(reader_dic)
+                file.close()

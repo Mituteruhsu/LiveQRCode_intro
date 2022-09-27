@@ -71,6 +71,10 @@ def reInfo(x):
     recieve_Item = z[1]
     recieve_totle_Item = z[2]
     codetype = z[3]
+    if codetype == '0': codetype = '0:Big5'
+    elif codetype == '1': codetype = '1:UTF-8'
+    elif codetype =='2': codetype = '2:Base64'
+
     # print("發票字軌(10位)    : " + self.recieve)
     # print("發票開立日期 (7位): " + self.recieve_date)
     # print("隨機碼 (4位)      : " + self.recieve_randam)
@@ -87,7 +91,7 @@ def reInfo(x):
     # print(x)
     # =======split 將資料變成list一一拆解=======
     # =======將list依照[1, 3, 5]的資料連接=======
-    items=','.join(x[0:len(x):3])
+    items=' '.join(x[0:len(x):3])
     item_quantity=' '.join(x[1:len(x):3])
     items_price=' '.join(x[2:len(x):3])
     # print(items, item_quantity, items_price)

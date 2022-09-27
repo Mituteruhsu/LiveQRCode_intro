@@ -9,7 +9,7 @@ Thank you!
 
 # Prograss
 
-2022/09/24 main_QRCode_Main.py : Run this program allows you to scan the QRCode and print out the recieve data.
+2022/09/24 main_QRCode_Main.py : Run this program allows you to scan the QRCode and print out the data in terminal.
 
 
 # The project is simple
