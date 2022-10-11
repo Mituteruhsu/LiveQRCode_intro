@@ -26,10 +26,9 @@ Thank you!
 
 In this folder your will find lots of the test program. It helps me to reorgnize my idea and process.
 
+![This is a alt text.](/image/2022091403.png "The Expenses & budget.")
 ![This is a alt text.](/image/2022091401.png "The list.")
 ![This is a alt text.](/image/2022091402.png "The Budget.")
-![This is a alt text.](/image/2022091403.png "The Expenses & budget.")
-![This is a alt text.](/image/2022091404.png "The list.")
 
 ## Problem
 
