@@ -22,13 +22,13 @@ Thank you!
 5. Store the data into csv.
 6. Use google API to upload the reformated data.
 
-## Proto Program
-
-In this folder your will find lots of the test program. It helps me to reorgnize my idea and process.
-
 ![This is a alt text.](/image/2022091403.png "The Expenses & budget.")
 ![This is a alt text.](/image/2022091401.png "The list.")
 ![This is a alt text.](/image/2022091402.png "The Budget.")
+
+## Proto Program
+
+In this folder your will find lots of the test program. It helps me to reorgnize my idea and process.
 
 ## Problem
 
