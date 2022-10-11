@@ -1,9 +1,3 @@
-```js
-function myFunction(p1, p2) {
-    return p1 * p2;
-}
-```
-
 # LiveQRCode_intro
 I put this for study purpose. 
 This is an E-invoice reading project.   
@@ -52,3 +46,7 @@ In this folder your will find lots of the test program. It helps me to reorgnize
 
 1. E- Invoice Platform:  
     https://www.einvoice.nat.gov.tw/EINSM/ein_upload/html/ENV/1428905476324-1.html
+
+```js
+--Test Write--
+```
