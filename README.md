@@ -1,3 +1,9 @@
+```js
+function myFunction(p1, p2) {
+    return p1 * p2;
+}
+```
+
 # LiveQRCode_intro
 I put this for study purpose. 
 This is an E-invoice reading project.   
