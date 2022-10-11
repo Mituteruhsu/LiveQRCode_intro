@@ -7,13 +7,13 @@ Please let me know.
 
 Thank you!
 
-# Prograss
+## Prograss
 
 2022/09/24 main_Run.py : Run this program allows you to scan the QRCode and print out the data in terminal.   
 2022/09/26 main_Run.py : update the function to create csv file.   
 2022/09/27 main_Run_Google_API_Upload.py : Allows you to upload csv data to google sheet.   
 
-# The project is simple
+## The project is simple
 
 1. Start up webcam with openCV.
 2. Use pyzbar or openCV to decode the QRcode.
@@ -22,23 +22,23 @@ Thank you!
 5. Store the data into csv.
 6. Use google API to upload the reformated data.
 
-# Proto Program
+## Proto Program
 
 In this folder your will find lots of the test program. It helps me to reorgnize my idea and process.
 
-# Problem
+## Problem
 
 1. When you scan the QRCode with TestScan/QRCode_test_00.py, the "print(f'pymessage:{pybarcode}')" will get garbled.  
     It seems to be a problem with decode method.........
 
-# What is in mind
+## What is in mind
 
 1. Use AI to read the QRCode
 2. Decode issue. The data is not 'utf-8' can be 'shift-jis' 'big5'
 3. Methods of decode.
 4. Get better understanding of QRCode with bytes.
 
-# Reference
+## Reference
 
 1. E- Invoice Platform:  
     https://www.einvoice.nat.gov.tw/EINSM/ein_upload/html/ENV/1428905476324-1.html
