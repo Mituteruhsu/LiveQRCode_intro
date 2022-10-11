@@ -22,9 +22,9 @@ Thank you!
 5. Store the data into csv.
 6. Use google API to upload the reformated data.
 
-![This is a alt image.](/image/2022091403.png "The Expenses & budget.")
-![This is a alt text.](/image/2022091401.png "The list.")
-![This is a alt text.](/image/2022091402.png "The Budget.")
+![Image.](/image/2022091403.png "The Expenses & budget.")
+![Image.](/image/2022091401.png "The list.")
+![Image.](/image/2022091402.png "The Budget.")
 
 ## Proto Program
 
