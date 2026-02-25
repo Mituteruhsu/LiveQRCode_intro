@@ -11,32 +11,35 @@ def own_decoder(frame):
     #from PIL import Image
     pil_image = Image.fromarray(frame)
     barcodes = decode(pil_image, symbols=[64])  # symbols=[64]處理 WARNING: .\zbar\decoder\pdf417.c:73的問題
-    for barcode in barcodes:
-        return barcode
+    return barcodes
 
 def real_time_qrcode_detection():
-    strcheck = ""      # 先假定一個空字串
+    decoded_list = []
     ret, frame = cap.read()
-    barcode = own_decoder(frame)
+    if not ret:
+        return decoded_list
+    barcodes = own_decoder(frame)
     # frame = cv2.resize(frame,(0,0),fx=0.5,fy=0.5)
-    if barcode:
+    for barcode in barcodes:
         x, y, w, h = barcode.rect
         message = barcode.data
         font = cv2.FONT_HERSHEY_DUPLEX
         cv2.rectangle(frame, (x, y), (x+w, y+h), (0, 255, 255), 2)
-        cv2.putText(frame, message.decode(), (x,y), font, 3, (255, 20, 255), 5)
-        # print(barcode)    # 可以看到所有QRCode的內容
-        # 僅顯示data內容並用utf-8解碼字體
-        strcheck = barcode.data.decode('utf-8')
-        # print(barcode.data)
-        # print(strcheck)
+        try:
+            # Try to decode data for display, handle errors
+            display_text = message.decode('utf-8', errors='replace')
+            cv2.putText(frame, display_text[:20], (x,y), font, 1, (255, 20, 255), 2)
+            decoded_list.append(display_text)
+        except Exception as e:
+            print(f"Decode error: {e}")
+
     cv2.imshow('decoder window', frame)
-    return strcheck
+    return decoded_list
 
 def QRCodedata():
     while True:
-        codedata = real_time_qrcode_detection()
-        var.QRCodeStr = codedata
+        codedata_list = real_time_qrcode_detection()
+        var.QRCodeList = codedata_list
             
         key = cv2.waitKey(1)
         if key == 27:

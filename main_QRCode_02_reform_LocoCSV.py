@@ -68,12 +68,37 @@ def csv_reader():
         file.close()
         return dict_from_csv
 
+def fetch_company_name(tax_id):
+    import urllib.request
+    import urllib.parse
+    import json
+    # Taiwan GCIS API
+    query = f"Business_Accounting_NO eq {tax_id}"
+    url = f"https://data.gcis.nat.gov.tw/od/data/api/5F643FD0-51CA-461D-ACA3-22748E74DB43?$format=json&$filter={urllib.parse.quote(query)}"
+    try:
+        with urllib.request.urlopen(url, timeout=5) as response:
+            data = json.loads(response.read().decode())
+            if data and len(data) > 0:
+                return data[0].get('Company_Name') or data[0].get('Business_Name')
+    except Exception as e:
+        print(f"Error fetching company name: {e}")
+    return None
+
 def Dict_get_value_check(Iv_num):
     Iv_num_input=Iv_num  # 'SI'+Iv_num SI在main已經使用
     result_company=csv_reader().get(Iv_num_input)
     if result_company is None:
+        print('Searching for company name online...')
+        tax_id = Iv_num.lstrip("SI")
+        online_name = fetch_company_name(tax_id)
+
+        if online_name:
+            print(f"Found online: {online_name}")
+            csv_writer(tax_id, online_name)
+            return online_name
+
         print('please update ivnum')
-        Inv_num=input('Invoice_num '+Iv_num.lstrip("SI")+': ')
+        Inv_num=input('Invoice_num '+tax_id+': ')
         Cpinfo=input('Company_name: ')
         csv_writer(Inv_num,Cpinfo)
         result_company=csv_reader().get(Iv_num_input)
@@ -91,7 +116,7 @@ def Dict_get_value_check(Iv_num):
 # deletinput=input('請輸入欲刪除的Invoice_num: ')
 # csv_delet(deletinput)
 # ---------read_file-------------
-csv_reader()
+# csv_reader()
 # ------Value_check_test---------
 # Dict_get_value_check('18070629')
 

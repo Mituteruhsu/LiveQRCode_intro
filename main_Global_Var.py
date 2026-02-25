@@ -1,3 +1,3 @@
 def var():
-	global QRCodeStr
-	QRCodeStr = ""
+	global QRCodeList
+	QRCodeList = []
